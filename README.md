@@ -37,14 +37,15 @@ pip install -r requirements.txt
 
    Each LOPAP data file has two columns: datetime and concentration.
 
-2. **Run the example workflow:**
+2. **Run the workflow:**
 
-   ```bash
-   cd examples
+```bash
    python run_deconv.py
-   ```
+```
 
-   Edit the USER SETTINGS section at the top of `run_deconv.py` to point to your data files.
+   By default a file dialog asks for the training manifest and the test data file.
+   To use fixed paths instead, set `USE_FILE_DIALOG = False` and edit
+   `TRAIN_MANIFEST` / `TEST_MANIFEST` in the USER SETTINGS section of `run_deconv.py`.
 
 3. **Or use the Python API directly:**
 
@@ -83,8 +84,7 @@ lopap_deconv/
     train.py          # IRF training (LHS + optimisation)
     deconvolve.py     # deconvolution solver + IRF builder
     plotting.py       # diagnostic plots
-examples/
-    run_deconv.py     # end-to-end workflow script
+run_deconv.py         # end-to-end workflow script
 ```
 
 ## Requirements
